@@ -1,0 +1,63 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arifcse21</title>
+
+    <link rel='shortcut icon' type='image/x-icon' href="{% static 'Images/favicon.ico' %}">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <div class="user">
+        <img src="{% static 'Images/Arif-removebg-preview.png' %}" alt="Arif">
+        <h3>Md Abdullah Al Arif</h3>
+        <p><strong>DevOps | SAP BASIS</strong></p>
+    </div>
+
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Blogs</a>
+        <a href="#portfolio">Videos</a>
+        <!-- <a href="#contact">Ping</a> -->
+        <a href="#">T-UI(soon)</a>
+
+    </nav>
+
+</header>
+
+<!-- header section ends -->
+
+
+
+<div id="menu-btn" class="fas fa-bars"></div>
+
+<!-- theme toggler  -->
+
+<div id="theme-toggler" class="fas fa-moon"></div>
+
+
+{% block portfolio %}
+
+{% endblock portfolio %}
+
+<div class="credits"> <a href="https://www.google.com/search?q=arifcse21">&copy<span> Arifcse21</span></a> | all rights reserved </div>
+
+
+<!-- custom js file link  -->
+<script src="{% static 'JS/script.js' %}"></script>
+
+</body>
+</html>
