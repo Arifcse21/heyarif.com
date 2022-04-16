@@ -12,12 +12,19 @@ class Post(models.Model):
     title = models.CharField(max_length=250, unique=True)
     slug = models.SlugField(max_length=250, unique=True, null=True, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    cover = models.ImageField(upload_to="Uploaded/")
     content = models.TextField()
+    sticker = models.CharField(max_length=50, unique=False, null=True, blank=True)
     published_at = models.DateTimeField(auto_now=True)
     updated_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    tags = models.CharField(max_length=400, null=True, blank=True)
 
     class Meta:
         ordering = ['-published_at']
+
+    # def image_tag(self):
+    #     return format_html("<img src='/Media/{}'".format(self.cover))
+
     def __str__(self):
         return self.title

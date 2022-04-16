@@ -18,6 +18,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = BASE_DIR / 'templates'
 STATIC_DIR = BASE_DIR / 'static'
 
+MEDIA_ROOT = BASE_DIR / 'Media'
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -114,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Dhaka'
 
 USE_I18N = True
 
@@ -124,8 +127,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/Images/'
+STATIC_URL = 'static/'
+MEDIA_URL = 'Images/'
 
 STATICFILES_DIRS = [
     STATIC_DIR,
