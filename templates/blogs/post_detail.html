@@ -1,0 +1,9 @@
+{% extends "portfolio/base.html" %}
+{% load static %}
+
+{% block post %}
+
+    <p>{{post.content | striptags }}</p>
+    <img src="/Images/{{ post.cover }}" style="width:100%; object-fit: cover;" >
+
+{% endblock post %}

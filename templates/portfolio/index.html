@@ -1,6 +1,5 @@
 {% extends 'portfolio/base.html' %}
 {% load static %}
-{% load widget_tweaks %}
 
 {% block portfolio %}
 
@@ -101,12 +100,17 @@
     
     <div class="box-container">
         {% for post in post_list %}
-        <div class="box">
-            <i class="{{ post.sticker }} "></i>
-            <h3> {{ post.title }}</h3>
-            <p> {{ post.content | slice:":70" }}</p> </p>
-            <!-- <img src="Images/{{ post.cover }}" style="width:100%;object-fit: cover;"> -->
-        </div>
+        
+            <div class="box">
+                <a href="/blogs/{{ post.slug }}"> 
+                    <i class="{{ post.sticker }} "></i>
+                    <h3> {{ post.title }}</h3>
+                    <p> {{ post.content | striptags |truncatewords:10 | safe }}</p>
+
+                    <!-- <img src="Images/{{ post.cover }}" style="width:100%;object-fit: cover;"> -->
+                </a>
+            </div>
+        
         {% endfor %}
 
         <!-- <div class="box">
@@ -133,14 +137,18 @@
             <i class="fab fa-wordpress"></i>
             <h3>In development stage</h3>
         </div> -->
-        <a href="www.google.com" target="_blank">
+        
             <div class="box">
-                <i class="fas fa-plus"></i>
-                <h3>See More Blogs</h3>
+                <a href="/blogs/">
+                    <i class="fas fa-plus"></i>
+                    <h3>See More Blogs</h3>
 
-                <p>More awesome blogs I have written</p>
+                    <p>More awesome blogs I have written
+                    I write about Linux, Python, Django, PostgreSQL, MySQL, DevOps, 
+                    and many more technologies. Now Let's see all the blogs. </p>
+                </a>
             </div>
-        </a>
+       
     </div>
 
 
@@ -206,22 +214,7 @@
 
 <!-- contact section starts -->
 
-<!-- <section class="contact" id="contact"> -->
 
-    <!-- <h1 class="heading"> <span>ping</span> me↝ </h1> -->
-    <!-- <a href="https://twitter.com/Arifcse21?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false" style="width : 400px;height : 400px;">Follow @Arifcse21</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
-
-    <!-- <form method="post" action="">
-        {% csrf_token %}
-        {{ form.name|attr:"type:text"|attr:"placeholder:Your Full Name"|add_class:"box" }}
-        {{ form.email|attr:"type:email"|attr:"placeholder:Your Email"|add_class:"box" }}
-        {{ form.subject|attr:"type:text"|attr:"placeholder:Subject"|add_class:"box" }}
-        {{ form.message|attr:"placeholder:Your Message"|attr:"cols:30"|attr:"rows:10"|add_class:"box" }}
-
-        <input type="submit" value="Send" class="btn">
-    </form> -->
-
-<!-- </section> -->
 
 
 <!-- contact section ends -->

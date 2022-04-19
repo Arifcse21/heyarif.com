@@ -37,16 +37,29 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'widget_tweaks',
+    # 'widget_tweaks',
+    'ckeditor',
+    'ckeditor_uploader',
     'portfolio',
     'blogs',
+
 ]
+
+CKEDITOR_UPLOAD_PATH = 'Uploaded/'
+
+CKEDITOR_CONFIGS={
+    'default': {
+        'extraPlugins' : 'codesnippet',
+        'toolbar' : 'full',
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,0 +1,22 @@
+{% extends "portfolio/base.html" %}
+{% block blogs %}
+<section class="services" id="services">
+
+    <h1 class="heading">My Latest <span>blogs</span> </h1>
+    
+    <div class="box-container">
+        {% for post in post_list %}
+        <div class="box">
+            <a href="/blogs/{{ post.slug }}">
+                <i class="{{ post.sticker }} "></i>
+                <h3> {{ post.title }}</h3>
+                <p> {{ post.content | striptags|truncatewords:10 }}</p> </p>
+                <!-- <img src="/Images/{{ post.cover }}" style="width:100%;object-fit: cover;"> -->
+            </a>
+        </div>
+        {% endfor %} 
+    </div>
+
+</section>
+
+{% endblock blogs %}

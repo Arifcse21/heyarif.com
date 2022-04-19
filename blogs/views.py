@@ -5,12 +5,13 @@ from .models import Post
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-published_at')[:7]
-    print(Post.objects.all().count())
     
     template_name = 'portfolio/index.html'
 
-
+class PostListAll(generic.ListView):
+    queryset = Post.objects.filter(status=1).order_by('-published_at')
+    template_name = 'blogs/posts_list.html'
 
 class PostDetail(generic.DetailView):
     model = Post
-    template_name = 'portfolio/detail.html'
+    template_name = 'blogs/post_detail.html'

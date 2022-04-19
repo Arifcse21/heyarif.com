@@ -4,7 +4,7 @@
     /* --green:#27ae60; */
     --green: rgb(6, 197, 6);
     --black:#444;
-    --light-color:#777;
+    --light-color:rgb(54, 50, 50);
     --bg-color:#e6e6e6;
     --border:.1rem solid rgba(0,0,0,.2);
     --box-shadow:.4rem .4rem 1rem #ccc,
