@@ -10,6 +10,7 @@ class PostList(generic.ListView):
 
 class PostListAll(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-published_at')
+    paginate_by = 2
     template_name = 'blogs/posts_list.html'
 
 class PostDetail(generic.DetailView):

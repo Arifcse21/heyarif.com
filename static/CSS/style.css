@@ -343,7 +343,14 @@ section{
     z-index: 0;
     overflow:hidden;
 }
-
+.services .box-container .box-lg{
+    padding:3rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 0;
+    overflow:hidden;
+}
 .services .box-container .box i{
     font-size:4rem;
     padding-bottom: 5rem;
@@ -356,10 +363,31 @@ section{
     color:var(--black);
 }
 
+.services .box-container .box-lg h3{
+    text-align: center;
+    font-size:3rem;
+    padding-bottom: 2rem;
+    color:var(--black);
+}
+
 .services .box-container .box p{
     font-size:1.4rem;
     line-height: 1.8;
     color:var(--light-color);
+}
+
+.services .box-container .box-lg p{
+    font-size:1.4rem;
+    line-height: 1.8;
+    color:var(--light-color);
+}
+
+.services .box-container .box-lg img{
+    height: 50%;
+    object-fit: cover;
+    width: 100%;
+    padding-bottom: 2rem;
+    /* border-radius: .5rem; */
 }
 
 .services .box-container .box::before{
@@ -528,3 +556,25 @@ section{
     }
 
 }
+
+ul.pagination {
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+ul.pagination li {display: inline;}
+ul.pagination li a {
+    color: var(--black);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid var(--black);
+}
+ul.pagination li a.active {
+    background-color: var(--green);
+    color: white;
+    border: 1px solid var(--black);
+}
+ul.pagination li a:hover:not(.active) {background-color: rgb(62, 152, 40);}
+div.center {text-align: center;}
