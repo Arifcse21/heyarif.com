@@ -16,3 +16,4 @@ class PostListAll(generic.ListView):
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blogs/post_detail.html'
+    

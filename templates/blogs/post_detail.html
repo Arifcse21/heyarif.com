@@ -2,16 +2,41 @@
 {% load static %}
 
 {% block post %}
-<section class="services">
-    <!-- <h1>{{post.title}}</h1> -->
-    <dev class="box-container">
-        <div class="box-lg">
-                <h3>{{ post.title }}</h3>
-                <img src="/Images/{{ post.cover }}"  >
-                <hr>
-                <p>{{ post.content | safe }}</p>
-        </div>
-    </dev>
-</section>
+<!-- <section class="services"> -->
+    <!-- <dev class="box-container"> -->
+<div style="padding: 2rem; margin: 1rem">
+        <h3 style="text-align: center;font-size:4rem">{{ post.title }}</h3>
+        <img src="/Images/{{ post.cover }}" style="width: 100%;height: 70%; object-fit:cover; padding: 2rem" >
+        <hr>
+        <small style="color:#008014; padding: 2rem"> {{ post.published_at }}</small>
+        <h1 style="font-size:1.4rem; font-weight:normal" > {{ post.content | safe }} </h1>
+</div>
+    <!-- </dev> -->
+<!-- </section> -->
+
+<!-- Pagination Start -->
+
+<table class="table" style="width:100%;">
+  <thead>
+    <tr style="text-align:center;">
+      {% if post.get_next_by_published_at %}
+      <th><a href="/blogs/{{ post.get_next_by_published_at.slug }}">&laquo; Previous Blog</a></th>
+      {% else %}
+      <th><a href="/blogs/">&laquo; All Blogs</a></th>
+      {% endif %}
+      
+      {% if post.get_previous_by_published_at %}
+      <th><a href="/blogs/{{ post.get_previous_by_published_at.slug }}">Next Blog&raquo;</a></th>
+      {% else %}
+      <th><a href="/blogs/">All Blogs &raquo;</a></th>
+      
+      {% endif %}
+
+    </tr>
+  </thead>
+</table>
 
 {% endblock post %}
+
+
+

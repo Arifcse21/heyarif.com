@@ -370,6 +370,7 @@ section{
     color:var(--black);
 }
 
+
 .services .box-container .box p{
     font-size:1.4rem;
     line-height: 1.8;
@@ -387,7 +388,6 @@ section{
     object-fit: cover;
     width: 100%;
     padding-bottom: 2rem;
-    /* border-radius: .5rem; */
 }
 
 .services .box-container .box::before{
@@ -578,3 +578,5 @@ ul.pagination li a.active {
 }
 ul.pagination li a:hover:not(.active) {background-color: rgb(62, 152, 40);}
 div.center {text-align: center;}
+
+
