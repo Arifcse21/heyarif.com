@@ -1,2 +1,2 @@
 # heyarif.com
-My personal website code. It is written usong Python-Django, html, css, JS and a lot of my time.
+My personal website code. It is written using Python-Django, html, css,and JS
